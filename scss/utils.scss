@@ -1,0 +1,45 @@
+@import "mixins/utils";
+@import "vars";
+
+@include make-colors($colors);
+
+@include make-indents((
+  10: 10px,
+  15: 15px,
+  20: 20px,
+));
+@include make-font-sizes((
+  15: 15px,
+  18: 18px,
+  24: 24px,
+  32: 32px,
+  46: 46px,
+  63: 63px,
+));
+
+@include make-font-weights((
+  bold: 700,
+));
+
+@include make-opacities((08:0.8))
+.center-block {
+  position: relative;
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+.h-margin-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-center {
+  text-align: center;
+}
+
