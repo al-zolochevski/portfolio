@@ -1,0 +1,85 @@
+@mixin make-colors($colors) {
+  @each $name, $value in $colors {
+    .color-#{$name} {
+      color: $value;
+    }
+
+    .bg-#{$name} {
+      background-color: $value;
+    }
+  }
+}
+
+@mixin make-font-sizes($font-sizes) {
+  @each $name, $value in $font-sizes {
+    .font-#{$name} {
+      font-size: $value;
+    }
+  }
+}
+
+@mixin make-font-weights($font-weights) {
+  @each $name, $value in $font-weights {
+    .font-#{$name} {
+      font-weight: $value;
+    }
+  }
+}
+
+@mixin make-opacities($opacities) {
+  @each $name, $value in $opacities {
+    .opacity-#{$name}-until-hover {
+      opacity: $value;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@mixin make-indents($indents) {
+  @each $name, $value in $indents {
+    .margin-top-#{$name} {
+        margin-top: $value;
+    }
+
+    .margin-left-#{$name} {
+        margin-left: $value;
+    }
+
+    .margin-right-#{$name} {
+        margin-right: $value;
+    }
+
+    .h-margin-#{$name} {
+        margin-left: $value;
+        margin-right: $value;
+    }
+
+    .margin-bottom-#{$name} {
+        margin-bottom: $value;
+    }
+
+    .padding-top-#{$name} {
+        padding-top: $value;
+    }
+
+    .padding-left-#{$name} {
+        padding-left: $value;
+    }
+
+    .padding-right-#{$name} {
+        padding-right: $value;
+    }
+
+    .h-padding-#{$name} {
+        padding-left: $value;
+        padding-right: $value;
+    }
+
+    .padding-bottom-#{$name} {
+        padding-bottom: $value;
+    }
+  }
+}

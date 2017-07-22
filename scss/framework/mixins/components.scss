@@ -1,0 +1,29 @@
+
+
+
+@mixin make-animated-link ($indent: .5em, $height: 3px, $animation-duration: .3s) {
+  .animated-link {
+    position: relative;
+
+    padding-bottom: $indent;
+
+    &::after {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: $height;
+      background: currentColor;
+      content: '';
+      opacity: 0;
+      transition: height $animation-duration, opacity $animation-duration, transform $animation-duration;
+      transform: translateY(-$indent);
+    }
+
+    &:hover::after,
+    &:focus::after {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+}

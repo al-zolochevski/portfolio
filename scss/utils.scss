@@ -1,4 +1,5 @@
-@import "mixins/utils";
+@import "framework/mixins/utils";
+@import "framework/utils";
 @import "vars";
 
 @include make-colors($colors);
@@ -22,24 +23,13 @@
 ));
 
 @include make-opacities((08:0.8))
-.center-block {
-  position: relative;
 
-  &__content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+.bold {
+  font-weight: 700;
 }
 
 
-.h-margin-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.align-center {
-  text-align: center;
+.portrait {
+  border-radius: 50%;
 }
 
