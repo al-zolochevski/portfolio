@@ -1,3 +1,48 @@
 @import "framework/mixins/components";
 
 @include make-animated-link();
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+
+    &--nogutter {
+        & > [class^="col-"] {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+
+%col {
+    width: 100%;
+    min-width: 0;
+
+    padding-left: 15px;
+    padding-right: 15px;
+
+    &:first-child {
+        padding-left: 0;
+    }
+    &:last-child {
+        padding-right: 0;
+    }
+}
+
+@for $i from 1 through 12 {
+    .col-sm-#{$i} {
+        @media (min-width: 768px) {
+            flex: 0 0 (($i/12) * 100%);
+        }
+        @extend %col;
+    }
+
+    .col-md-#{$i} {
+        @media (min-width: 992px) {
+            flex: 0 0 (($i/12) * 100%);
+        }
+        @extend %col;
+    }
+}
+

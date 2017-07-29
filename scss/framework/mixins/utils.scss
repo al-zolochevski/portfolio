@@ -38,6 +38,14 @@
   }
 }
 
+@mixin make-font-families($items) {
+  @each $name, $value in $items {
+    .font-#{$name} {
+      font-family: $value;
+    }
+  }
+}
+
 @mixin make-indents($indents) {
   @each $name, $value in $indents {
     .margin-top-#{$name} {

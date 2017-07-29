@@ -1,14 +1,39 @@
 
 .header {
-  min-height: 660px;
-  background-size: cover;
-  background: url(../img/header.jpg) 50% 50%;
+    min-height: 660px;
+    background-size: cover;
+    background: url(../img/header.jpg) 50% 50%;
 }
 
-
 .about-me {
-  background-color:  #1D2026;
-  height: 942px;
-  color: white;
+    background-color: #1D2026;
+    height: 942px;
+    color: white;
+}
+
+//hooker code
+
+.button {
+    display: inline-block;
+    background: none;
+    padding: 0.7em;
+    border-radius: 30em;
+    opacity: 0.8;
+
+    &:hover {
+        opacity: 1;
+    }
+    //ОБЩИЙ КОД ДЛЯ ВСЕХ КНОПОК
+
+    &--ghost-brand {
+        border: 1px solid white;
+        color: white;
+    }
+
+    &--info {
+        border: 1px solid #38A5DB;
+        background: #38A5DB;
+        color: white;
+    }
 }
 

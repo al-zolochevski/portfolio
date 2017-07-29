@@ -5,10 +5,14 @@
 @include make-colors($colors);
 
 @include make-indents((
+  auto: auto,
   10: 10px,
   15: 15px,
   20: 20px,
+  40: 40px,
 ));
+
+
 @include make-font-sizes((
   15: 15px,
   18: 18px,
@@ -16,6 +20,11 @@
   32: 32px,
   46: 46px,
   63: 63px,
+));
+
+@include make-font-families ((
+  roboto: 'roboto_slabregular',
+  titillium: 'Titillium Web',
 ));
 
 @include make-font-weights((
@@ -28,8 +37,4 @@
   font-weight: 700;
 }
 
-
-.portrait {
-  border-radius: 50%;
-}
 
