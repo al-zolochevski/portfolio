@@ -9,6 +9,7 @@
 }
 
 .about-me {
+    // TODO: вынести цвет в vars
     background-color: #1D2026;
     height: 942px;
     color: white;
@@ -32,6 +33,7 @@
     }
 
     &--info {
+        // TODO: вынести цвет в vars
         border: 1px solid #38A5DB;
         background: #38A5DB;
         color: white;

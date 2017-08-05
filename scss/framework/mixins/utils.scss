@@ -1,100 +1,120 @@
-@mixin make-colors($colors) {
-  @each $name, $value in $colors {
-    .color-#{$name} {
-      color: $value;
-    }
+@mixin make-responsive-classes($class, $breakpoints) {
+    .#{$class} {
+        @content
+    };
 
-    .bg-#{$name} {
-      background-color: $value;
+    @each $breakpoint-name, $breakpoint-value in $breakpoints {
+        .#{$class}-#{$breakpoint-name} {
+            @media (min-width: $breakpoint-value) {
+                @content;
+            }
+        }
+
+        .#{$class}-upto-#{$breakpoint-name} {
+            @media (max-width: $breakpoint-value - 1) {
+                @content;
+            }
+        }
     }
-  }
 }
 
-@mixin make-font-sizes($font-sizes) {
-  @each $name, $value in $font-sizes {
-    .font-#{$name} {
-      font-size: $value;
+@mixin make-colors($colors) {
+    @each $name, $value in $colors {
+        .color-#{$name} {
+            color: $value;
+        }
+
+        .bg-#{$name} {
+            background-color: $value;
+        }
     }
-  }
+}
+
+@mixin make-font-sizes($font-sizes, $breakpoints) {
+    @each $name, $value in $font-sizes {
+        @include make-responsive-classes(font-#{$name}, $breakpoints) {
+            font-size: $value;
+        }
+    }
 }
 
 @mixin make-font-weights($font-weights) {
-  @each $name, $value in $font-weights {
-    .font-#{$name} {
-      font-weight: $value;
+    @each $name, $value in $font-weights {
+        .font-#{$name} {
+            font-weight: $value;
+        }
     }
-  }
 }
 
 @mixin make-opacities($opacities) {
-  @each $name, $value in $opacities {
-    .opacity-#{$name}-until-hover {
-      opacity: $value;
+    @each $name, $value in $opacities {
+        .opacity-#{$name}-until-hover {
+            opacity: $value;
 
-      &:hover {
-        opacity: 1;
-      }
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        .opacity-#{$name}-hover {
+
+            &:hover {
+                opacity: $value;
+            }
+        }
     }
-
-    .opacity-#{$name}-hover {
-
-      &:hover {
-        opacity: $value;
-      }
-    }
-  }
 }
 
 @mixin make-font-families($items) {
-  @each $name, $value in $items {
-    .font-#{$name} {
-      font-family: $value;
+    @each $name, $value in $items {
+        .font-#{$name} {
+            font-family: $value;
+        }
     }
-  }
 }
 
 @mixin make-indents($indents) {
-  @each $name, $value in $indents {
-    .margin-top-#{$name} {
-        margin-top: $value;
-    }
+    @each $name, $value in $indents {
+        .margin-top-#{$name} {
+            margin-top: $value;
+        }
 
-    .margin-left-#{$name} {
-        margin-left: $value;
-    }
+        .margin-left-#{$name} {
+            margin-left: $value;
+        }
 
-    .margin-right-#{$name} {
-        margin-right: $value;
-    }
+        .margin-right-#{$name} {
+            margin-right: $value;
+        }
 
-    .h-margin-#{$name} {
-        margin-left: $value;
-        margin-right: $value;
-    }
+        .h-margin-#{$name} {
+            margin-left: $value;
+            margin-right: $value;
+        }
 
-    .margin-bottom-#{$name} {
-        margin-bottom: $value;
-    }
+        .margin-bottom-#{$name} {
+            margin-bottom: $value;
+        }
 
-    .padding-top-#{$name} {
-        padding-top: $value;
-    }
+        .padding-top-#{$name} {
+            padding-top: $value;
+        }
 
-    .padding-left-#{$name} {
-        padding-left: $value;
-    }
+        .padding-left-#{$name} {
+            padding-left: $value;
+        }
 
-    .padding-right-#{$name} {
-        padding-right: $value;
-    }
+        .padding-right-#{$name} {
+            padding-right: $value;
+        }
 
-    .h-padding-#{$name} {
-        padding-left: $value;
-        padding-right: $value;
-    }
+        .h-padding-#{$name} {
+            padding-left: $value;
+            padding-right: $value;
+        }
 
-    .padding-bottom-#{$name} {
-        padding-bottom: $value;
+        .padding-bottom-#{$name} {
+            padding-bottom: $value;
+        }
     }
-  }
 }

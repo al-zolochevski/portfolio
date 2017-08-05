@@ -21,10 +21,11 @@
   20: 20px,
   21: 21px,
   32: 32px,
+  40: 40px,
   46: 46px,
   48: 48px,
   63: 63px,
-));
+), $breakpoints);
 
 @include make-font-families ((
   roboto: 'roboto_slabregular',
@@ -39,6 +40,10 @@
 
 .bold {
   font-weight: 700;
+}
+
+@include make-responsive-classes(hidden, $breakpoints) {
+    display: none;
 }
 
 
