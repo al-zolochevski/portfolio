@@ -54,8 +54,8 @@
         }
     }
 
-    @for $i from 1 through $column-count {
-        @each $name, $value in $breakpoints {
+    @each $name, $value in $breakpoints {
+        @for $i from 1 through $column-count {
             .col-#{$name}-#{$i} {
                 @media (min-width: $value) {
                     flex: 0 0 (($i/$column-count) * 100%);
