@@ -1,4 +1,5 @@
 @import "framework/mixins/components";
+@import "framework/components";
 
 @include make-animated-link();
 
@@ -46,4 +47,5 @@
         @extend %col;
     }
 }
+
 

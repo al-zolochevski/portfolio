@@ -9,6 +9,7 @@
   10: 10px,
   15: 15px,
   20: 20px,
+  30: 30px,
   40: 40px,
 ));
 
@@ -17,8 +18,11 @@
   15: 15px,
   18: 18px,
   24: 24px,
+  20: 20px,
+  21: 21px,
   32: 32px,
   46: 46px,
+  48: 48px,
   63: 63px,
 ));
 
@@ -31,7 +35,7 @@
   bold: 700,
 ));
 
-@include make-opacities((08:0.8))
+@include make-opacities((08:0.8, 6: 0.6))
 
 .bold {
   font-weight: 700;

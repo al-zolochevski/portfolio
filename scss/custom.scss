@@ -1,8 +1,11 @@
 
+/* ====================== components ====================== */
+
 .header {
     min-height: 660px;
     background-size: cover;
-    background: url(../img/header.jpg) 50% 50%;
+    background: url(../img/header.jpg) 50% 50% no-repeat;
+
 }
 
 .about-me {
@@ -11,12 +14,10 @@
     color: white;
 }
 
-//hooker code
-
 .button {
     display: inline-block;
     background: none;
-    padding: 0.7em;
+    padding: 0.8em;
     border-radius: 30em;
     opacity: 0.8;
 
@@ -26,7 +27,7 @@
     //ОБЩИЙ КОД ДЛЯ ВСЕХ КНОПОК
 
     &--ghost-brand {
-        border: 1px solid white;
+        border: 2px solid white;
         color: white;
     }
 
@@ -35,5 +36,40 @@
         background: #38A5DB;
         color: white;
     }
+}
+
+
+.animated-img-1 {
+    transition: all .5s;
+
+    &:hover  {
+        opacity: 0.6;
+        transform: scale(1.2);
+    }
+}
+
+.logo {
+    font-size: 64px;
+    font-weight: 600;
+}
+
+.z-style {
+    top: -17px;
+    font-size: 360%;
+    right: 5px;
+}
+
+/* ====================== utils ====================== */
+
+.blur-5 {
+    filter: blur(0.6px);
+}
+
+.height-35-per {
+    height: 35%;
+}
+
+.line-height-28 {
+    line-height: 28px;
 }
 
