@@ -1,29 +1,67 @@
+@mixin make-animated-link($indent: .5em, $height: 3px, $animation-duration: .3s) {
+    .animated-link {
+        position: relative;
 
+        padding-bottom: $indent;
 
+        &::after {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: $height;
+            background: currentColor;
+            content: '';
+            opacity: 0;
+            transition: height $animation-duration, opacity $animation-duration, transform $animation-duration;
+            transform: translateY(-$indent);
+        }
 
-@mixin make-animated-link ($indent: .5em, $height: 3px, $animation-duration: .3s) {
-  .animated-link {
-    position: relative;
+        &:hover::after,
+        &:focus::after {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+}
 
-    padding-bottom: $indent;
+@mixin make-grid($breakpoints, $column-count: 12, $indent: 15px) {
 
-    &::after {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      height: $height;
-      background: currentColor;
-      content: '';
-      opacity: 0;
-      transition: height $animation-duration, opacity $animation-duration, transform $animation-duration;
-      transform: translateY(-$indent);
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+
+        &--nogutter {
+            & > [class^="col-"] {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
     }
 
-    &:hover::after,
-    &:focus::after {
-      opacity: 1;
-      transform: translateY(0px);
+    %col {
+        width: 100%;
+        min-width: 0;
+
+        padding-left: $indent;
+        padding-right: $indent;
+
+        &:first-child {
+            padding-left: 0;
+        }
+        &:last-child {
+            padding-right: 0;
+        }
     }
-  }
+
+    @for $i from 1 through $column-count {
+        @each $name, $value in $breakpoints {
+            .col-#{$name}-#{$i} {
+                @media (min-width: $value) {
+                    flex: 0 0 (($i/$column-count) * 100%);
+                }
+                @extend %col;
+            }
+        }
+    }
 }
