@@ -1,9 +1,9 @@
+@import "vars";
 @import "framework/mixins/components";
 @import "framework/components";
-@import "vars";
 
 @include make-animated-link();
 
-@include make-grid($breakpoints);
-
+@include make-grid();
+@include make-container();
 

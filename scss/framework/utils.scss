@@ -1,3 +1,5 @@
+@import "mixins/utils";
+@import "settings";
 
 .center-block {
     position: relative;
@@ -45,7 +47,7 @@
     overflow: hidden;
 }
 
-/* posiytion */
+/* ======================== position ======================== */
 .relative {
     position: relative;
 }
@@ -53,3 +55,18 @@
 .absolute {
     position: absolute;
 }
+
+/* ======================== flexbox ======================== */
+
+.flex {
+    display: flex;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+@include make-responsive-classes(flex-column) {
+    flex-direction: column;
+}
+
+

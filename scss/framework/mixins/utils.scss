@@ -1,4 +1,6 @@
-@mixin make-responsive-classes($class, $breakpoints) {
+@import "../settings";
+
+@mixin make-responsive-classes($class) {
     .#{$class} {
         @content
     };
@@ -30,9 +32,9 @@
     }
 }
 
-@mixin make-font-sizes($font-sizes, $breakpoints) {
+@mixin make-font-sizes($font-sizes) {
     @each $name, $value in $font-sizes {
-        @include make-responsive-classes(font-#{$name}, $breakpoints) {
+        @include make-responsive-classes(font-#{$name}) {
             font-size: $value;
         }
     }
@@ -75,45 +77,45 @@
 
 @mixin make-indents($indents) {
     @each $name, $value in $indents {
-        .margin-top-#{$name} {
+        @include make-responsive-classes(margin-top-#{$name}) {
             margin-top: $value;
         }
 
-        .margin-left-#{$name} {
+        @include make-responsive-classes(margin-left-#{$name}) {
             margin-left: $value;
         }
 
-        .margin-right-#{$name} {
+        @include make-responsive-classes(margin-right-#{$name}) {
             margin-right: $value;
         }
 
-        .h-margin-#{$name} {
+        @include make-responsive-classes(h-margin-#{$name}) {
             margin-left: $value;
             margin-right: $value;
         }
 
-        .margin-bottom-#{$name} {
+        @include make-responsive-classes(margin-bottom-#{$name}) {
             margin-bottom: $value;
         }
 
-        .padding-top-#{$name} {
+        @include make-responsive-classes(padding-top-#{$name}) {
             padding-top: $value;
         }
 
-        .padding-left-#{$name} {
+        @include make-responsive-classes(padding-left-#{$name}) {
             padding-left: $value;
         }
 
-        .padding-right-#{$name} {
+        @include make-responsive-classes(padding-right-#{$name}) {
             padding-right: $value;
         }
 
-        .h-padding-#{$name} {
+        @include make-responsive-classes(h-padding-#{$name}) {
             padding-left: $value;
             padding-right: $value;
         }
 
-        .padding-bottom-#{$name} {
+        @include make-responsive-classes(padding-bottom-#{$name}) {
             padding-bottom: $value;
         }
     }

@@ -2,19 +2,18 @@
 /* ====================== components ====================== */
 
 .header {
-    min-height: 660px;
     background-size: cover;
     background: url(../img/header.jpg) 50% 50% no-repeat;
-
+    height: 100vh;
+    opacity: 0.95;
 }
 
 .about-me {
     // TODO: вынести цвет в vars
     background-color: #1D2026;
-    height: 942px;
     color: white;
 }
-
+//!!!!!!
 .button {
     display: inline-block;
     background: none;
