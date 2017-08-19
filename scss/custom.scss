@@ -14,30 +14,7 @@
     color: white;
 }
 //!!!!!!
-.button {
-    display: inline-block;
-    background: none;
-    padding: 0.8em;
-    border-radius: 30em;
-    opacity: 0.8;
 
-    &:hover {
-        opacity: 1;
-    }
-    //ОБЩИЙ КОД ДЛЯ ВСЕХ КНОПОК
-
-    &--ghost-brand {
-        border: 2px solid white;
-        color: white;
-    }
-
-    &--info {
-        // TODO: вынести цвет в vars
-        border: 1px solid #38A5DB;
-        background: #38A5DB;
-        color: white;
-    }
-}
 
 
 .animated-img-1 {
@@ -62,9 +39,7 @@
 
 /* ====================== utils ====================== */
 
-.blur-5 {
-    filter: blur(0.6px);
-}
+
 
 .height-35-per {
     height: 35%;

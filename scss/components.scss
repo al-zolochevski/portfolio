@@ -1,9 +1,38 @@
 @import "vars";
 @import "framework/mixins/components";
 @import "framework/components";
-
 @include make-animated-link();
 
 @include make-grid();
 @include make-container();
 
+.button {
+    display: inline-block;
+    background: none;
+    padding: 0.8em;
+    border-radius: 30em;
+    opacity: 0.8;
+
+    &:hover {
+        opacity: 1;
+    }
+    //ОБЩИЙ КОД ДЛЯ ВСЕХ КНОПОК
+
+    &--ghost-brand {
+        border: 2px solid white;
+        color: white;
+    }
+
+    &--info {
+        // TODO: вынести цвет в vars
+        border: 1px solid #38A5DB;
+        background: #38A5DB;
+        color: white;
+    }
+
+    &--default {
+        border: 1px solid #0a0a0a;
+
+    }
+
+}
