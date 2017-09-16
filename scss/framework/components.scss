@@ -3,3 +3,17 @@
     max-width: 100%;
     height: auto;
 }
+
+.toggler {
+    &__body {
+        display: none;
+    }
+
+    &__checkbox {
+        display: none;
+
+        &:checked + .toggler__body {
+            display: block;
+        }
+    }
+}

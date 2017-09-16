@@ -26,10 +26,19 @@
             color: $value;
         }
 
+        .color-hover-#{$name}:hover {
+            color: $value;
+        }
+
         .bg-#{$name} {
             background-color: $value;
         }
+
+        .border-#{$name} {
+            border: 1px solid $value;
+        }
     }
+
 }
 
 @mixin make-font-sizes($font-sizes) {
@@ -94,8 +103,17 @@
             margin-right: $value;
         }
 
+        @include make-responsive-classes(v-margin-#{$name}) {
+            margin-top: $value;
+            margin-bottom: $value;
+        }
+
         @include make-responsive-classes(margin-bottom-#{$name}) {
             margin-bottom: $value;
+        }
+
+        @include make-responsive-classes(padding-#{$name}) {
+            padding: $value;
         }
 
         @include make-responsive-classes(padding-top-#{$name}) {
@@ -113,6 +131,11 @@
         @include make-responsive-classes(h-padding-#{$name}) {
             padding-left: $value;
             padding-right: $value;
+        }
+
+        @include make-responsive-classes(v-padding-#{$name}) {
+            padding-top: $value;
+            padding-bottom: $value;
         }
 
         @include make-responsive-classes(padding-bottom-#{$name}) {

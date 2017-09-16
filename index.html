@@ -6,35 +6,58 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,700" rel="stylesheet">
     <meta name="viewport" content="width=device-width">
-    
+
 </head>
 <body>
-
-<header class="header center-block color-white">
-    <div class="align-center padding-top-20 uppercase  nav">
+<header class="header center-block bold">
+    
+    <div class="bg-white absolute full-width padding-20 hidden-sm" style="z-index: 2">
+        <div class="flex">
+            <span>Az</span>
+            <div class="margin-left-auto">
+                <i class="fa fa-navicon color-grey-1 h-padding-10 v-padding-5 font-24 border-grey-1"
+                   role="button" data-collapse="#collapse1"
+                   aria-hidden="true"></i>
+            </div>
+        </div>
+        <div id="collapse1" style="display: none;">
+            <a href="#" class="block align-center padding-20 color-grey-3 color-hover-blue-1 uppercase">what i
+                do</a>
+            <a href="#" class="block align-center padding-20 color-grey-3 color-hover-blue-1 uppercase">about
+                me</a>
+            <a href="#" class="block align-center padding-20 color-grey-3 color-hover-blue-1 uppercase">my
+                works</a>
+            <a href="#" class="block align-center padding-20 color-grey-3 color-hover-blue-1 uppercase">contact
+                me</a>
+        </div>
+    
+    </div>
+    
+    
+    <div class="align-center padding-top-20 uppercase hidden-upto-sm color-white">
         <span class="padding-right-10  font-16 opacity-8-until-hover font-bold h-margin-20">
             <a href="#" class="animated-link">What I do</a>
         </span>
         <span class="padding-right-10 font-16 opacity-8-until-hover font-bold h-margin-20">
-           <a href="#" class="animated-link">About me</a>
+            <a href="#" class="animated-link">About me</a>
         </span>
-        
         
         <span class="relative padding-right-30 font-roboto">
-                <span class="logo">A</span>
-                <span class="logo absolute z-style">Z</span>
-            </span>
+            <span class="logo">A</span>
+            <span class="logo absolute z-style">Z</span>
+        </span>
         
         <span class="padding-left-10 font-16 opacity-8-until-hover font-bold h-margin-20">
-           <a href="#" class="animated-link">My works</a>
+            <a href="#" class="animated-link">My works</a>
         </span>
         <span class="padding-left-10 font-16 opacity-8-until-hover font-bold h-margin-20">
-           <a href="#" class="animated-link">contact me</a>
+            <a href="#" class="animated-link">contact me</a>
         </span>
     </div>
-    <div class="center-block__content align-center">
+    
+    <div class="center-block__content align-center color-white">
         
-        <div class="font-weight font-40-upto-sm font-63-sm  bold font-roboto">
+        <div class="font-weight font-40-upto-sm font-63-sm  bold font-roboto margin-a">
             Alex Zolochevski
         </div>
         
@@ -44,7 +67,7 @@
     </div>
 </header>
 
-<div class="about-me h-padding-15">
+<div class="about-me h-padding-15 ">
     <div class="font-48 bold align-center padding-top-40 font-roboto">About Me</div>
     <img class="img border-rounded margin-bottom-40 margin-top-40  h-margin-auto"
          src="img/me.jpg" alt="" style="max-width: 250px">
@@ -66,14 +89,15 @@
     </div>
     
     <div class="align-center">
-    <a href="#" class="align-center button button--info font-18 h-margin-auto">
-    Send Message
-    </a>
+        <a href="#" class="align-center button button--info font-18 h-margin-auto">
+            Send Message
+        </a>
     </div>
 </div>
 
 <div>
-    <span class="block align-center font-36 font-roboto margin-bottom-40 margin-top-100" style="color: rgb(58, 60, 74);">
+    <span class="block align-center font-36 font-roboto margin-bottom-40 margin-top-100"
+          style="color: rgb(58, 60, 74);">
         I got the Skills
     </span>
     
@@ -111,33 +135,34 @@
     </div>
 </div>
 
-    <div class="container bg-gray-2">
+<div class="container bg-gray-2">
         <span class="block align-center font-48 font-roboto font-bold margin-bottom-40 padding-top-100 color-grey-2">
             My Works
         </span>
-        
-        <span class="block h-margin-auto align-center font-18 line-height-28 padding-bottom-80 color-grey-2" style=" max-width: 550px;">
+    
+    <span class="block h-margin-auto align-center font-18 line-height-28 padding-bottom-80 color-grey-2"
+          style=" max-width: 550px;">
             I've worked with many serious brands in the Design and Code industry.
             See a collection of works I am proud of!
         </span>
-        
-        
-        <div class="row justify-content-center">
-            <div class="">
-                <a href="#" class=" font-18 button button--default padding-left-40">
-                    ALL
-                </a>
-            </div>
     
-            <div>
-                <a href="#" class=" button button--info font-18">
-                    MOCK-UPS
-                </a>
-            </div>
+    
+    <div class="row justify-content-center">
+        <div class="">
+            <a href="#" class=" font-18 button button--default padding-left-40">
+                ALL
+            </a>
         </div>
         
+        <div>
+            <a href="#" class=" button button--info font-18">
+                MOCK-UPS
+            </a>
+        </div>
     </div>
-    
+
+</div>
+
 
 <div class="row row--nogutter">
     <div class="col-xs-6 col-sm-2 overflow-hidden">
@@ -160,26 +185,20 @@
     </div>
 </div>
 
-<!--<div class="your-class">-->
-    <!--<div>-->
-        <!--<img class="img border-rounded margin-bottom-40 margin-top-40  h-margin-auto"-->
-             <!--src="img/header.jpeg" alt="" style="max-width: 250px">-->
-    <!--</div>-->
-    <!--<div>-->
-        <!--<img class="img border-rounded margin-bottom-40 margin-top-40  h-margin-auto"-->
-             <!--src="img/me.jpg" alt="" style="max-width: 250px">-->
-    <!--</div>-->
-    <!--<div>-->
-        <!--<img class="img border-rounded margin-bottom-40 margin-top-40  h-margin-auto"-->
-             <!--src="img/me.jpg" alt="" style="max-width: 250px">-->
-    <!--</div>-->
-<!--</div>-->
-<!--<script src="bower_components/jquery/dist/jquery.js"></script>-->
-<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script src="bower_components/slick-carousel/slick/slick.js"></script>
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
 <script>
-    $('.your-class').slick();
+//   $('#nav-menu-toggler').click()
+
+    document.querySelectorAll('[data-collapse]').forEach(function(element){
+        var target = document.querySelector(element.dataset.collapse);
+        element.onclick = function () {
+            if (target.style.display == 'none') {
+                target.style.display = "block";
+            } else {
+                target.style.display = "none";
+            }
+        }
+    });
 </script>
 </body>
 </html>
