@@ -206,12 +206,9 @@
         }
     });
 </script>
-<script>
-    function sleep(ms) {
-        ms += new Date().getTime();
-        while (new Date() < ms){}
-    }
 
+<script>
+    /* TODO: сделать это универсально как collapse (наш либо https://v4-alpha.getbootstrap.com/components/collapse/) */
     var animateOlolo = function() {
         /* TODO: брать offsetLeft в цикле https://stackoverflow.com/a/5598797 */
         // батя = el.parentElement
@@ -220,14 +217,22 @@
         var leftStartPx = offsetLeft + el.clientWidth;
         var leftStart = -leftStartPx * 100 / el.parentElement.clientWidth;
         var leftEnd = 50;
+
+        var DURATION = 2000; // in ms;
+        var STEP_COUNT = 100;
         
-    
-        for (var currentLeft = leftStart; currentLeft < leftEnd; currentLeft++){
-            el.style.left = Math.round(currentLeft) + "%";
-            console.log(Math.round(currentLeft));
-//            alert(currentLeft);
-            sleep(100);
-        }
+        var i = 0;
+        var moveLeft = function(){
+            var currentOffset = leftStart + i / STEP_COUNT * (leftEnd - leftStart);
+            el.style.left = currentOffset + '%';
+            
+            if (i < STEP_COUNT) {
+                i++;
+                setTimeout(moveLeft, DURATION / STEP_COUNT);
+            }
+        };
+        
+        moveLeft();
     };
 </script>
 </body>
