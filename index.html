@@ -69,6 +69,12 @@
 
 <div class="about-me h-padding-15 ">
     <div class="font-48 bold align-center padding-top-40 font-roboto">About Me</div>
+    <button id="animate-ololo" onclick="animateOlolo()">Animate</button>
+    <div class="relative padding-top-40 padding-bottom-40">
+        <div id="ololo" class="font-48 bold absolute">
+            Ololo
+        </div>
+    </div>
     <img class="img border-rounded margin-bottom-40 margin-top-40  h-margin-auto"
          src="img/me.jpg" alt="" style="max-width: 250px">
     <div class="font-21 style-font-1 align-center line-height-28 h-margin-auto " style=" max-width: 710px;">
@@ -199,6 +205,30 @@
             }
         }
     });
+</script>
+<script>
+    function sleep(ms) {
+        ms += new Date().getTime();
+        while (new Date() < ms){}
+    }
+
+    var animateOlolo = function() {
+        /* TODO: брать offsetLeft в цикле https://stackoverflow.com/a/5598797 */
+        // батя = el.parentElement
+        var offsetLeft = 15;
+        var el = document.getElementById('ololo');
+        var leftStartPx = offsetLeft + el.clientWidth;
+        var leftStart = -leftStartPx * 100 / el.parentElement.clientWidth;
+        var leftEnd = 50;
+        
+    
+        for (var currentLeft = leftStart; currentLeft < leftEnd; currentLeft++){
+            el.style.left = Math.round(currentLeft) + "%";
+            console.log(Math.round(currentLeft));
+//            alert(currentLeft);
+            sleep(100);
+        }
+    };
 </script>
 </body>
 </html>
